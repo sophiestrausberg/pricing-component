@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+    --light-purple: hsl(236, 72%, 79%);
+    --dark-purple: hsl(237, 63%, 64%);
+    --v-light-greyblue: hsl(240, 78%, 98%);
+    --light-greyblue: hsl(234, 14%, 74%);
+    --greyblue: hsl(233, 13%, 49%);
+    --dark-greyblue: hsl(232, 13%, 33%);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: url("images/bg-top.svg") top right no-repeat, url("images/bg-bottom.svg") bottom left no-repeat, var(--v-light-greyblue);
+    font-size: 15px;
+}
+
+h1 {
+    font-size: 65px;
+}
+
+h2 {
+    font-size: 30px;
+    color: var(--greyblue);
+}
+
+.ios-switch {
+    display: flex;
+    align-items: center;
+    margin: 40px 0 80px 0;
+    color: var(--light-greyblue);
+}
+    
+.ios-switch input[type=checkbox] {
+      display: none;
+}
+
+.switch-body {
+      width: 60px;
+      padding: 5px 5px;
+      border-radius: 999px;
+      display: inline-flex;
+      justify-content: flex-start;
+      cursor: pointer;
+      background-image: linear-gradient(to right, var(--light-purple), var(--dark-purple));
+      box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      margin: 0 2em;
+}
+          
+.toggle {
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        background-color: white;
+        box-sizing: border-box;
+        transition: transform 0.4s ease;
+}
+
+.ios-switch.active .switch-body, .ios-switch.active .toggle {
+    opacity: .5;
+}
+      
+.ios-switch.active .toggle {
+        transform: translateX(100%);
+}
+
+.pricing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card-component {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 75%;
+}
+
+.card {
+    background-color: white;
+    width: 100%;
+    border-radius: 0.5em;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 2em;
+    color: var(--greyblue);
+}
+
+.professional {
+    background-image: linear-gradient(var(--light-purple), var(--dark-purple));
+    color: white !important;
+    margin: -20px 0;
+}
+
+.feature {
+    border-top: 1px solid hsla(234, 14%, 74%, 0.5);
+    padding: 1em 0;
+}
+
+.feature-profesional {
+    border-top: 1px solid hsla(240, 80%, 98%, 0.5);
+}
+
+.feature-container {
+    border-bottom: 1px solid hsla(234, 14%, 74%, 0.5);
+}
+
+.feature-container-professional {
+    border-bottom: 1px solid hsla(240, 80%, 98%, 0.5);
+}
+
+.btn {
+    text-decoration: none;
+    background-image: linear-gradient(to right, var(--light-purple), var(--dark-purple));
+    padding: 1em 2em;
+    color: white;
+    border-radius: 0.5em;
+    letter-spacing: 2px;
+    font-size: 13px;
+    box-sizing: border-box;
+    transition: all 0.1s ease;
+}
+
+.btn:hover {
+    border: 1px solid var(--greyblue);
+    background-image: none;
+    color: var(--dark-purple);
+    box-sizing: border-box;
+}
+
+.btn-professional {
+    color: var(--dark-purple);
+    background-color: white;
+    background-image: none;
+}
+
+.btn-professional:hover {
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+}
+
+.dg {
+    color: var(--dark-greyblue)
+}
+
+.price-yearly::before, .price-monthly::before {
+    content: "$";
+    font-size: 40px;
+    vertical-align: 7px;
+    padding-right: 10px;
+}
+
+.price-yearly, .price-monthly {
+    display: none;
+}
+
+.price-yearly.active, .price-monthly.active {
+    display: block;
+}
+
+@media screen and (max-width: 1000px) {
+
+    html, body {
+        height: 150%;
+    }
+
+    .card-component {
+        flex-direction: column;
+        width: 350px;
+        row-gap: 3em;
+    }
+
+    .professional {
+        margin: 0;
+    }
+
+    body {
+        background: url("images/bg-top.svg") top right no-repeat, var(--v-light-greyblue);
+    }
+
+}
